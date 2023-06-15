@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static%}
+    {% block js_additional %}
+    <script src="{% static 'main/js/script.js' %}"></script>
+    {% endblock %}
+    {% load static%}
+    {% block css_additional %}
+    <link rel="stylesheet" href=" {% static 'main/css/style.css' %} ">
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>Регистрация голоса</title>
+</head>
+<body>
+    <noscript>Включите JavaScript в своём браузере !</noscript>
+    {% load static%}
+    {% block index_additional %}
+    <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'main/img/logo.png' %}" class="logo-1"></a>
+    </div>
+    {% endblock %}
+        <div class="Registration">
+            <a href="{% url 'complete_registration' %}">
+                <button class="btn-1">
+                    <div class="image-container-1"></div>
+                        <p>Заглушка для записи семплов</p>
+                </button>
+            </a>
+        </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static%}
+    {% block js_additional %}
+    <script src="{% static 'main/js/script.js' %}"></script>
+    {% endblock %}
+    {% load static%}
+    {% block css_additional %}
+    <link rel="stylesheet" href=" {% static 'main/css/style.css' %} ">
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>Благодарим за регистрацию</title>
+</head>
+<body>
+    <noscript>Включите JavaScript в своём браузере !</noscript>
+    {% load static%}
+    {% block index_additional %}
+    <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'main/img/logo.png' %}" class="logo-1"></a>
+    </div>
+    {% endblock %}
+
+    <div>
+        <a href="{% url 'login' %}">
+            <button>Спасибо за регистрацию</button>
+        </a>
+    </div>
+</body>
+</html>

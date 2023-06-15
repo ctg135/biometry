@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    {% load static%}
+    {% block js_additional %}
+    <script src="{% static 'main/js/script.js' %}"></script>
+    {% endblock %}
+    {% load static%}
+    {% block css_additional %}
+    <link rel="stylesheet" href=" {% static 'main/css/style.css' %} ">
+    {% endblock %}
+    <meta charset="UTF-8">
+    <title>Вход в государственную биометрическую систему</title>
+</head>
+<body>
+    <noscript>Включите JavaScript в своём браузере !</noscript>
+    {% load static%}
+    {% block index_additional %}
+    <div class="logo">
+        <a href="{% url 'index' %}"><img src="{% static 'main/img/logo.png' %}" class="logo-1"></a>
+    </div>
+    {% endblock %}
+    <div class='box'>
+        <div class='box-form'>
+            <div class='box-login-tab'></div>
+                <div class='box-login-title'>
+                    <div class='i i-login'></div>
+                        <h2>Вход</h2>
+                </div>
+                <div class='box-login'>
+                    <div class='fieldset-body' id='login_form'>
+                        <form action="{% url '2FA_login' %}" method="post">
+                            {% csrf_token %}
+                            <p>
+                                <label for='user'>Логин</label>
+                                <input type='text' id='user' name='login' title='Username' />
+                                <span id='valida' class='i i-warning'></span>
+                            </p>
+                            <p class='field'>
+                                <label for='pass'>Пароль</label>
+                                <input type='password' id='pass' name='password' title='Password' />
+                                <span id='valida' class='i i-close'></span>
+                            </p>
+                            <input type='submit' id='do_login' value='Войти' title='Get Started' />
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
